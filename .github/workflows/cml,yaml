@@ -2,11 +2,11 @@ name: model-wine-quality
 on: [push]
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
     # optionally use a convenient Ubuntu LTS + DVC + CML image
     # container: ghcr.io/iterative/cml:0-dvc2-base1
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: cml_run
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
